@@ -64,7 +64,7 @@ const PokeStatsBar = ({ stats }: PokeStatsProps) => {
     const newW = calculateStats(stats.base_stat)
     Animated.timing(animatedWidth, {
       toValue: newW,
-      duration: 2000,
+      duration: 1500,
       useNativeDriver: true
     }).start()
   }, [])

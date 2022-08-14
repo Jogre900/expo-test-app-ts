@@ -5,9 +5,9 @@ import {
   View,
   Text,
   StyleSheet,
-  Image,
   ImageBackground
 } from 'react-native'
+import Avatar from '@components/Avatar'
 import { Feather as Icon } from '@expo/vector-icons'
 import PokeMiddleSection from './pokeMiddleSection'
 import PokeStatsBar from '@components/PokemonStatsBar/pokeStatsBar'
@@ -92,12 +92,11 @@ const PokeDetails = () => {
               size={20}
               color={StyleGuide.palette.purple}
             />
-            <View>
-              <Image
-                style={styles.avatar}
-                source={{ uri: data?.sprites?.front_default }}
-              />
-            </View>
+            <Avatar.Image
+              source={{ uri: data?.sprites?.front_default }}
+              size="xl"
+              style={styles.avatar}
+            />
             <Icon name="edit" size={20} color={StyleGuide.palette.purple} />
           </View>
           <Text style={styles.pokeName}>
@@ -147,8 +146,6 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   avatar: {
-    width: 64,
-    height: 64,
     marginHorizontal: 40
   },
   pokeName: {
