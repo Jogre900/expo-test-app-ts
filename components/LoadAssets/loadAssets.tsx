@@ -16,9 +16,10 @@ const fonts = {
   'Montserrat-SemiBold': require('../../assets/fonts/Montserrat-SemiBold.ttf')
 }
 
-const assets = [
+const assetsL = [
   require('../../assets/images/poke_landscape.jpg'),
-  require('../../assets/images/profile.jpg')
+  require('../../assets/images/profile.jpg'),
+  require('../../assets/images/pokemon_load.png')
 ]
 
 const usePromises = (promises: any[], cb: any) => {
@@ -40,7 +41,7 @@ const useLoadAssets = (fonts: any, assets: any) => {
 
 const LoadAssets = ({ assets, children }: LoadAssetsProps) => {
   const dispatch = useAuthDispatch()
-  const ready = useLoadAssets(fonts || {}, assets || [])
+  const ready = useLoadAssets(fonts || {}, assetsL || [])
   console.warn(ready)
   // useEffect(() => {
   //   loadAsset(dispatch)

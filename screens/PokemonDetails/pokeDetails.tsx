@@ -15,6 +15,9 @@ import StyleGuide from '@components/StyleGuide'
 import Utils from '@utils/utils'
 import { useRoute } from '@react-navigation/native'
 import axios from 'axios'
+
+import Skeleton from './skeleton'
+
 const { height } = Dimensions.get('window')
 
 type PokeStat = {
@@ -72,7 +75,15 @@ const PokeDetails = () => {
   if (isLoading) {
     return (
       <View style={styles.loadingContainer}>
-        <ActivityIndicator color={StyleGuide.palette.purple} size={60} />
+        <ImageBackground
+          style={styles.loadingImg}
+          source={require('../../assets/images/pokemon_load.png')}
+          resizeMode="cover"
+          blurRadius={1}
+        >
+          <ActivityIndicator color={StyleGuide.palette.purple} size={60} />
+        </ImageBackground>
+        {/* <Skeleton /> */}
       </View>
     )
   }
@@ -124,7 +135,13 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: StyleGuide.palette.darkGrey
+    backgroundColor: StyleGuide.palette.lightBlack
+  },
+  loadingImg: {
+    height: '100%',
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   container: {
     backgroundColor: StyleGuide.palette.darkGrey,
