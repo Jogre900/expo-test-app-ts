@@ -1,6 +1,7 @@
 import { View, Text } from 'react-native'
 import ResetPass from '@screens/ResetPass'
 import Pokemon from '@screens/Pokemon'
+import Home from '@screens/Home'
 const Feed = () => {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -43,7 +44,7 @@ export const data = [
   },
   {
     name: 'Reset Pass',
-    component: ResetPass,
+    component: Home,
     icon: 'lock'
   },
   {
