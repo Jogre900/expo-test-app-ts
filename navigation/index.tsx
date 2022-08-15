@@ -73,7 +73,7 @@ function RootNavigator() {
       ) : (
         <>
           <Stack.Screen name="SignIn" component={SignIn} />
-          <Stack.Screen name="ResetPass" component={ResetPass} />
+          <Stack.Screen name="ResetPass" component={Home} />
         </>
       )}
 
